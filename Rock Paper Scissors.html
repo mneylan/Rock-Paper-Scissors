@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Function Practice</title>
+
+<body>
+
+    <h2 style="color: salmon">This is my new professional website</h2>
+    <button onclick="rockpaperscissors()">Rock</button>
+    <button onclick="rockpaperscissors()">Paper</button>
+    <button onclick="rockpaperscissors()">Scissors</button>
+
+
+
+<script>
+ 
+ function rockpaperscissors() {
+
+
+rps = ["rock", "paper", "scissors"]
+
+let generated = Math.random(rps)
+
+if (generated < 0.33) {return alert("Rock") };
+if (generated > 0.33 && generated < 0.66) {return alert("Paper")};
+if (generated > 0.66) {return alert("Scissors")};
+
+
+}
+
+</script>
+
+
+
+
+</body>
+
+
+
+</head>
+
+
+</html>
+
+
+
+
+
+
+
