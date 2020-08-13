@@ -1,33 +1,127 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Function Practice</title>
+    <title>Rock Paper Scissors</title>
 
 <body>
 
-    <h2 style="color: salmon">This is my new professional website</h2>
-    <button onclick="rockpaperscissors()">Rock</button>
-    <button onclick="rockpaperscissors()">Paper</button>
-    <button onclick="rockpaperscissors()">Scissors</button>
+    <!--<h2 style="color: salmon">This is my new professional website</h2>-->
+    <button onclick="computerPlay()">Rock</button>
+    <button onclick="computerPlay()">Paper</button>
+    <button onclick="computerPlay()">Scissors</button>
 
 
 
 <script>
  
- function rockpaperscissors() {
+ function computerPlay() {
 
 
 rps = ["rock", "paper", "scissors"]
 
 let generated = Math.random(rps)
 
-if (generated < 0.33) {return alert("Rock") };
-if (generated > 0.33 && generated < 0.66) {return alert("Paper")};
-if (generated > 0.66) {return alert("Scissors")};
+if (generated < 0.33) {return "rock"};
+if (generated > 0.33 && generated < 0.66) {return "paper"};
+if (generated > 0.66) {return "scissors"};
 
 
 }
 
+function game() {
+
+let userScore = 0
+let computerScore = 0
+
+let playerSelection = prompt("what do you pick?)").toLowerCase()
+if (playerSelection != "rock" && playerSelection != "scissors" && playerSelection != "paper") {return "That's not a valid option!"}
+let computer = computerPlay()  
+
+let final = playRound(playerSelection, computer)
+
+
+if (final == "You win! Rock beats scissors.") {userScore += 1}
+if (final == "You lose! Paper beats rock.") {computerScore += 1}
+if (final == "You win! Scissors beats paper.") {userScore += 1}
+if (final == "You lose! Rock beats scissors.") {computerScore += 1}
+if (final == "You win! Paper beats rock.") {userScore += 1}
+if (final == "You lose! Scissors beats paper.") {computerScore += 1}
+
+console.log(userScore + "-" + computerScore)
+
+let playerSelection2 = prompt("what do you pick?)").toLowerCase()
+let roundTwo = playRound(playerSelection2, computer)
+
+if (roundTwo == "You win! Rock beats scissors.") {userScore += 1}
+if (roundTwo == "You lose! Paper beats rock.") {computerScore += 1}
+if (roundTwo == "You win! Scissors beats paper.") {userScore += 1}
+if (roundTwo == "You lose! Rock beats scissors.") {computerScore += 1}
+if (roundTwo == "You win! Paper beats rock.") {userScore += 1}
+if (roundTwo == "You lose! Scissors beats paper.") {computerScore += 1}
+
+console.log(userScore + "-" + computerScore)
+
+let playerSelection3 = prompt("what do you pick?)").toLowerCase()
+let roundThree = playRound(playerSelection3, computer)
+
+if (roundThree == "You win! Rock beats scissors.") {userScore += 1}
+if (roundThree == "You lose! Paper beats rock.") {computerScore += 1}
+if (roundThree == "You win! Scissors beats paper.") {userScore += 1}
+if (roundThree == "You lose! Rock beats scissors.") {computerScore += 1}
+if (roundThree == "You win! Paper beats rock.") {userScore += 1}
+if (roundThree == "You lose! Scissors beats paper.") {computerScore += 1}
+
+console.log(userScore + "-" + computerScore)
+
+let playerSelection4 = prompt("what do you pick?)").toLowerCase()
+let roundFour = playRound(playerSelection3, computer)
+
+if (roundFour == "You win! Rock beats scissors.") {userScore += 1}
+if (roundFour == "You lose! Paper beats rock.") {computerScore += 1}
+if (roundFour == "You win! Scissors beats paper.") {userScore += 1}
+if (roundFour == "You lose! Rock beats scissors.") {computerScore += 1}
+if (roundFour == "You win! Paper beats rock.") {userScore += 1}
+if (roundFour == "You lose! Scissors beats paper.") {computerScore += 1}
+
+console.log(userScore + "-" + computerScore)
+
+let playerSelection5 = prompt("what do you pick?)").toLowerCase()
+let roundFive = playRound(playerSelection3, computer)
+
+if (roundFive == "You win! Rock beats scissors.") {userScore += 1}
+if (roundFive == "You lose! Paper beats rock.") {computerScore += 1}
+if (roundFive == "You win! Scissors beats paper.") {userScore += 1}
+if (roundFive == "You lose! Rock beats scissors.") {computerScore += 1}
+if (roundFive == "You win! Paper beats rock.") {userScore += 1}
+if (roundFive == "You lose! Scissors beats paper.") {computerScore += 1}
+
+if (userScore > computerScore) {return userScore + "-" + computerScore + " You win!"}
+if (computerScore > userScore) {return userScore + "-" + computerScore + " You lose!"}
+if (userScore == computerScore) {return userScore + "-" + computerScore + " It's a tie!"}
+}
+
+function playRound(playerSelection, computerSelection) {
+
+let player = playerSelection
+let computer = computerPlay()
+
+
+if (player == "rock" && computer == "rock") {return "It's a tie!"}
+if (player == "scissors" && computer == "scissors") {return "It's a tie!"}
+if (player == "paper" && computer == "paper") {return "It's a tie!"}
+
+if (player == "rock" && computer == "scissors") {return "You win! Rock beats scissors."}
+if (player == "rock" && computer == "paper") {return "You lose! Paper beats rock."}
+
+if (player == "scissors" && computer == "paper") {return "You win! Scissors beats paper."}
+if (player == "scissors" && computer == "rock") {return "You lose! Rock beats scissors."}
+
+if (player == "paper" && computer == "rock") {return "You win! Paper beats rock."}
+if (player == "paper" && computer == "scissors") {return "You lose! Scissors beats paper."}
+
+else {return "that's not a rock, paper, or scissors!"}
+
+}
 </script>
 
 
